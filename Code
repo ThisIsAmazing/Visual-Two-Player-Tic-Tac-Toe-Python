@@ -1,0 +1,318 @@
+import turtle
+import sys
+t = turtle.Pen()
+def drawBoard():
+  t.up()
+  x = 5
+  y = 55
+  t.goto(x,y)
+  t.down()
+  for x in range(3):
+    for x in range(3):
+      for x in range(4):
+        t.forward(30)
+        t.right(90)
+      t.forward(30)  
+    t.up()
+    y+=30
+    t.goto(x,y)
+    t.down()
+def O_mark(x,y):
+  t.up()
+  coordinatesX = [20,50,80]
+  coordinatesY = [100,70,40]
+  t.goto(coordinatesX[x-1],coordinatesY[y-1])
+  t.right(90)
+  t.forward(15)
+  t.left(90)
+  t.down()
+  t.circle(15)
+def X_mark(x,y):
+  t.up()
+  coordinatesX = [20,50,80]
+  coordinatesY = [100,70,40]
+  t.goto(coordinatesX[x-1],coordinatesY[y-1])
+  t.down()
+  t.right(45)
+  t.forward(15)
+  t.backward(30)
+  t.forward(15)
+  t.left(90)
+  t.forward(15)
+  t.backward(30)
+  t.right(45)
+drawBoard()
+O_list = []
+X_list = []
+Total_List = []
+keepgoing = True
+while keepgoing:
+  firstTurn = int(input("Where do you want to place your \"o\" marker?(1-9)\n"))
+  O_list.append(firstTurn)
+  Total_List.append(firstTurn)
+  Total_List.sort()
+
+  if firstTurn == 1:
+    O_mark(1,1)
+  elif firstTurn == 2:
+    O_mark(2,1)
+  elif firstTurn == 3:
+    O_mark(3,1)
+  elif firstTurn == 4:
+    O_mark(1,2)
+  elif firstTurn == 5:
+    O_mark(2,2)
+  elif firstTurn == 6:
+    O_mark(3,2)
+  elif firstTurn == 7:
+    O_mark(1,3)
+  elif firstTurn == 8:
+    O_mark(2,3)
+  elif firstTurn == 9:
+    O_mark(3,3)
+  
+ 
+
+  if 1 in O_list and 4 in O_list and 7 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 2 in O_list and 5 in O_list and 8 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 3 in O_list and 5 in O_list and 7 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 3 in O_list and 6 in O_list and 9 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 1 in O_list and 2 in O_list and 3 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 4 in O_list and 5 in O_list and 6 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 7 in O_list and 8 in O_list and 9 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 1 in O_list and 5 in O_list and 9 in O_list:
+    print("O wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+
+    
+  secondTurn = int(input("Where do you want to place your \"x\" marker?(1-9)\n"))
+  X_list.append(secondTurn)
+  Total_List.append(secondTurn)
+  Total_List.sort()
+
+  if secondTurn == 1:
+    X_mark(1,1)
+  elif secondTurn == 2:
+    X_mark(2,1)
+  elif secondTurn == 3:
+    X_mark(3,1)
+  elif secondTurn == 4:
+    X_mark(1,2)
+  elif secondTurn == 5:
+    X_mark(2,2)
+  elif secondTurn == 6:
+    X_mark(3,2)
+  elif secondTurn == 7:
+    X_mark(1,3)
+  elif secondTurn == 8:
+    X_mark(2,3)
+  elif secondTurn == 9:
+    X_mark(3,3)
+
+  
+    
+  if 1 in X_list and 4 in X_list and 7 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 2 in X_list and 5 in X_list and 8 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 3 in X_list and 5 in X_list and 7 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 3 in X_list and 6 in X_list and 9 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 1 in X_list and 2 in X_list and 3 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 4 in X_list and 5 in X_list and 6 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 7 in X_list and 8 in X_list and 9 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  elif 1 in X_list and 5 in X_list and 9 in X_list:
+    print("X wins!")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+    
+  if secondTurn == firstTurn:
+    print("Exiting...")
+    playAgain = input("Do you want to play again?\n" )
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
+      
+  if Total_List == [1,2,3,4,5,6,7,8,9]:
+    print("It's a draw")
+    playAgain = input("Do you want to play again?\n")
+    if playAgain.lower() == "no":
+      sys.exit()
+    else:
+      t.reset()
+      drawBoard()
+      O_list = []
+      X_list = []
+      Total_List = []
